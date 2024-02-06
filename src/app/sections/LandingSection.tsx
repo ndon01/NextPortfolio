@@ -18,10 +18,10 @@ type SkillProps = {
 };
 
 const LandingSection: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
   const [{ width, height }, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 1920,
+    height: 1080,
   });
   useEffect(() => {
     const handleResize = () => {
