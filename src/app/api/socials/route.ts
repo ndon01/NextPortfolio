@@ -33,8 +33,6 @@ async function getAllSocials(): Promise<SocialsImplementation | null> {
           socialLink: row[3],
         };
       });
-
-      console.log(formattedData);
     })
     .catch((error) => {
       console.error(error);
@@ -50,7 +48,6 @@ async function getAllSocials(): Promise<SocialsImplementation | null> {
 // Define a route to get all projects
 export async function GET() {
   try {
-    console.log("GET /api/socials");
     const socials = await getAllSocials();
     if (socials) {
       return Response.json({

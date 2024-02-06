@@ -20,8 +20,6 @@ export default function ProjectsSection() {
         fetch("/api/projects/all")
             .then((res) => res.json())
             .then((data) => {
-
-
                 setProjects(data.projects);
             })
             .catch((err) => {
@@ -39,7 +37,10 @@ export default function ProjectsSection() {
                 <div className={styles.projectCardsContainer}>
                     {!projects ? (
                         <div className={styles.loadingContainer}>
-                            <h2>Loading...</h2>
+                            <h2 style={{
+                                textAlign: "center",
+                                color : "white"
+                            }}>Loading...</h2>
                         </div>
                     ) : (
                         projects.map((project) => {

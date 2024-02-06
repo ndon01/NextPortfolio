@@ -36,7 +36,6 @@ async function getAllProjects(): Promise<ProjectsImplementation | null> {
         };
       });
 
-        console.log(formattedData);
     })
     .catch((error) => {
       console.error(error);
@@ -52,7 +51,6 @@ async function getAllProjects(): Promise<ProjectsImplementation | null> {
 // Define a route to get all projects
 export async function GET() {
   try {
-    console.log("GET /api/projects/all");
     const projects = await getAllProjects();
     if (projects) {
       return Response.json({

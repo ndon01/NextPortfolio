@@ -12,8 +12,6 @@ type ProjectCardProps = {
 
 export const ProjectCardComponent = ({title = "Project Name", 
 description = "A descriptive description.", tags = ["Javascript", "HTML", "CSS"], projectLink } : ProjectCardProps) => {
-
-    console.log("ProjectCardComponent: ", title, description, tags, projectLink);
   return (
     <>
       <div className={styles.ProjectCardContainer}>
@@ -37,8 +35,6 @@ description = "A descriptive description.", tags = ["Javascript", "HTML", "CSS"]
         </div>
         <div className={styles.ProjectButtons}>
             <div className={styles.VisitProjectButton} onClick={() => {
-                console.log("Visiting project at: ", projectLink);
-
                 if (projectLink !== "") {
                     window.open(projectLink);
                 }

@@ -22,7 +22,9 @@ type ProjectsImplementation = project[] | null;
 export default function LandingPage() {
 
   return (
-    <main>
+    <main style={{
+      backgroundColor: "smokegrey"
+    }}>
       {/* Personal Area Vertical List */}
       <LandingSection  />
       {/* Transition Area */}

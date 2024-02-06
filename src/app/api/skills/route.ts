@@ -31,8 +31,6 @@ async function getAllSkills(): Promise<SkillsImplementation | null> {
             skillDescription: row[2],
         };
       });
-
-      console.log(formattedData);
     })
     .catch((error) => {
       console.error(error);
@@ -48,7 +46,6 @@ async function getAllSkills(): Promise<SkillsImplementation | null> {
 // Define a route to get all projects
 export async function GET() {
   try {
-    console.log("GET /api/skills");
     const skills = await getAllSkills();
     if (skills) {
       return Response.json({

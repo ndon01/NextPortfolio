@@ -73,13 +73,6 @@ const LandingSection: React.FC = () => {
 
   return (
     <div>
-      {/* Background Blur Overlay */}
-      <div
-        className={styles.backgroundBlurOverlay}
-        style={{ width: `${width}px`, height: `${height}px` }}
-      />
-      {/* Background Floating Objects */}
-
       <div ref={mainRef} className={`${styles.contentArea}`}>
         {/* Title, Subtitle */}
         <div
