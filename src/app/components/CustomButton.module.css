@@ -1,0 +1,35 @@
+.CustomButton {
+    border: 2px solid black;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-block: .75rem;
+    padding-left: .5rem;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 5;
+    transition: all 0.4s ease;
+}
+
+.CustomButton:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    z-index: 10;
+    border: 2px solid black;
+    color: rgba(0, 0, 0, 0.8);
+    transition: all 0.4s ease
+}
+
+.ImagePadding {
+    padding: 5px;
+}
+
+.InnerDiv {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

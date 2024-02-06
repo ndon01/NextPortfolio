@@ -1,0 +1,78 @@
+/* ProjectsSection.module.css */
+.projectsContainer {
+    background-color: #404040;
+}
+
+.contentArea {
+    background-color: #404040;
+    padding: 50px;
+    padding-inline: 200px;
+}
+
+.titleRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    z-index: 4;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.titleRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 4;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Display the project cards in a grid that expands virtically as the page width decreases */
+.projectCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Align items to the start of the container */
+    gap: 20px;
+    /* Adjust based on your design */
+    padding: 20px;
+    /* Adds some padding around the cards */
+}
+
+.projectRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: max-content;
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .contentArea {
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .projectRow {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

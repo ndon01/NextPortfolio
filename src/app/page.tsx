@@ -1,95 +1,55 @@
+"use client"
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import CustomButton from "./components/CustomButton";
+import SkillsComponent from "./components/SkillsComponent";
+import { ProjectCardComponent } from "./components/ProjectCardComponent";
+import { useEffect, useState } from "react";
+import LandingSection from "./sections/LandingSection";
+import ProjectsSection from "./sections/ProjectsSection";
 
-export default function Home() {
+type project = {
+  projectId: string;
+  projectName: string;
+  projectDescription: string;
+  projectImage: string;
+  projectLink: string;
+};
+
+type ProjectsImplementation = project[] | null;
+
+export default function LandingPage() {
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main>
+      {/* Personal Area Vertical List */}
+      <LandingSection  />
+      {/* Transition Area */}
+      <div
+        style={{
+          position: "relative",
+          bottom: -10,
+        }}
+      >
+        <svg
+          viewBox="0 0 1440 172"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        >
+          <path
+            d="M0 32.7547C268.668 68.3857 425.947 69.4302 720 32.7547C1001.18 -9.79929 1158.82 -12.023 1440 32.7547V171.755H0V32.7547Z"
+            fill="#404040"
+          />
+        </svg>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      {/* Projects Area */}
+      <ProjectsSection />
     </main>
   );
 }

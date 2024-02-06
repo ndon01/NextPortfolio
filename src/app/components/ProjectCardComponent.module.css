@@ -1,0 +1,110 @@
+.ProjectCardContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    transition: all 0.8s ease;
+
+}
+
+.ProjectCardContainer:hover {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 1);
+    transition: all 0.2s ease;
+}
+
+.ProjectDetailsContainer {
+    flex: 1;
+    padding: 20px;
+}
+
+.ProjectTitleContainer {
+}
+
+.ProjectTitle {
+    text-align: center;
+}
+
+.ProjectDescriptionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProjectDescription {
+    text-align: center;
+    margin-top: 10px;
+    text-wrap: wrap;
+    width: 400px;
+}
+
+
+.ProjectTagsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.ProjectTags {
+    width: 300px;
+}
+
+.ProjectTagsTitleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.ProjectTagsTitle {
+    margin-top: 15px;
+    text-align: start;
+}
+
+.ProjectButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.VisitProjectButton {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    transition: all 0.3s ease;
+
+}
+
+.VisitProjectButton:hover {
+    background-color: #000;
+    color: #f2f2f2;
+    cursor: pointer;
+    transition: none;
+    font-weight: 700;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .ProjectCardContainer {
+        width: 100%;
+    }
+
+    .ProjectDescription {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ProjectDescription {
+        width: 100%;
+        font-size: 14px;
+    }
+}
