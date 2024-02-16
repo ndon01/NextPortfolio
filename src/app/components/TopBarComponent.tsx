@@ -46,9 +46,9 @@ export const TopBarComponent: React.FC = () => {
       <>
 
           <div className={`${Styles.MobileNavBarContainer}`}
-            style={{
-              zIndex: 1000,
-            }}>
+                      style={{
+                        zIndex: 1000,
+                      }}>
             <div
               className={`${Styles.NavBarContentContainer}`}
               onClick={() => {
@@ -78,7 +78,7 @@ export const TopBarComponent: React.FC = () => {
               height: "100%",
               backgroundColor: "rgb(64, 64, 64)",
               backdropFilter: "blur(5px)",
-              zIndex: 1000,
+              zIndex: 1001,
               display: mobileNavMenuVisible ? "flex" : "none",
               flexDirection: "column",
             }}
@@ -101,8 +101,9 @@ export const TopBarComponent: React.FC = () => {
               >
                 <span
                   style={{
-                    fontSize: "24px",
+                    fontSize: "20px",
                     color: "white",
+                    fontWeight: 200,
                   }}
                 >
                   Close
@@ -162,7 +163,10 @@ export const TopBarComponent: React.FC = () => {
     }}>
 
 
-          <div className={`${Styles.NavBarContainer}`}>
+          <div className={`${Styles.NavBarContainer}`}
+                      style={{
+                        zIndex: 1000,
+                      }}>
             {/* Left Side */}
             <div className={`${Styles.NavBarLeftContainer}`}>
               <div className={`${Styles.NavBarContentContainer}`} onClick={navigateHome}>
