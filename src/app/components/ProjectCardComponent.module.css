@@ -42,6 +42,7 @@
 
 .ProjectTagsContainer {
     width: 100%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +51,8 @@
 
 .ProjectTags {
     width: 300px;
+    height: max-content;
+
 }
 
 .ProjectTagsTitleContainer {

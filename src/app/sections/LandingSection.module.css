@@ -37,6 +37,7 @@
 .contentArea {
     padding: 50px;
     padding-inline: 200px;
+    height: 100vh;
 }
 
 .pdNameH1 {

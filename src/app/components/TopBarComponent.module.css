@@ -1,0 +1,142 @@
+.NavBarContainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(64, 64, 64);
+}
+.NavBarLeftContainer {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-left: 20px;
+}
+
+.NavBarRightContainer {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.NavBarContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-inline: 20px;
+}
+
+.NavBarContentText {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.NavBarContentTextSelected {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.NavBarContentText:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    .NavBarContentText {
+        color: white;
+        font-size: 1.2em;
+        font-weight: 400;
+        text-decoration: none;
+        font-size: 44px;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+
+/* Mobile */
+
+.MobileNavBarContainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(64, 64, 64);
+    z-index: 2000;
+
+    position: fixed;
+    top: 0;     
+}
+
+.MobileNavBarHamburgerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    gap: 5px;
+}
+
+.MobileNavBarHamburgerLine {
+    width: 20px;
+    height: 1px;
+    background-color: white;
+}
+
+.MobileNavBarHamburgerContainer:hover {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+}
+
+.SlideInLeft {
+    animation: slideInLeft 0.1s ease-in;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-125%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(125%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-125%);
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(125%);
+    }
+}

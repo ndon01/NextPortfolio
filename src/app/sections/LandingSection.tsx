@@ -73,7 +73,12 @@ const LandingSection: React.FC = () => {
 
   return (
     <div>
-      <div ref={mainRef} className={`${styles.contentArea}`}>
+      <div ref={mainRef} className={`${styles.contentArea}`}
+        style={{
+          height: 'max-content',
+          minHeight: '80vh',
+        }}
+      >
         {/* Title, Subtitle */}
         <div
           className={`${styles.personalDetailsArea} ${styles.personalDetails} ${styles.slideInTop}`}
