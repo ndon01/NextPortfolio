@@ -11,7 +11,7 @@ export type SkillsImplementation = SkillProps[];
 async function getAllSkills(): Promise<SkillsImplementation | null> {
   let formattedData: any;
   await fetch(
-    "https://sheets.googleapis.com/v4/spreadsheets/1_LO4wvheOiAJKwDEMxtF1YBDbBlIDv7mLnjAqbdy5QY/values/Skills!A2:C30",
+    `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GOOGLE_SPREADSHEET_ID}/values/Skills!A2:C`,
     {
       method: "GET",
       headers: {

@@ -1,19 +1,18 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-type project = {
-  projectId: string;
-  projectName: string;
-  projectDescription: string;
-  projectTags: string;
-  projectLink: string;
+type SocialProps = {
+  socialId: string;
+  socialName: string;
+  socialImage: string;
+  socialLink: string;
 };
 
-export type ProjectsImplementation = project[];
+export type SocialsImplementation = SocialProps[];
 
-async function getAllProjects(): Promise<ProjectsImplementation | null> {
+async function getAllSocials(): Promise<SocialsImplementation | null> {
   let formattedData: any;
   await fetch(
-    "https://sheets.googleapis.com/v4/spreadsheets/1_LO4wvheOiAJKwDEMxtF1YBDbBlIDv7mLnjAqbdy5QY/values/Projects!A2:E30",
+    `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GOOGLE_SPREADSHEET_ID}/values/Socials!A2:D`,
     {
       method: "GET",
       headers: {
@@ -28,14 +27,12 @@ async function getAllProjects(): Promise<ProjectsImplementation | null> {
     .then((data) => {
       formattedData = data.values.map((row: string[]) => {
         return {
-          projectId: row[0],
-          projectName: row[1],
-          projectDescription: row[2],
-          projectTags: row[3],
-          projectLink: row[4],
+          socialId: row[0],
+          socialName: row[1],
+          socialImage: row[2],
+          socialLink: row[3],
         };
       });
-
     })
     .catch((error) => {
       console.error(error);
@@ -45,20 +42,20 @@ async function getAllProjects(): Promise<ProjectsImplementation | null> {
     return Promise.resolve(formattedData);
   }
 
-  return Promise.resolve(null);;
+  return Promise.resolve(null);
 }
 
 // Define a route to get all projects
 export async function GET() {
   try {
-    const projects = await getAllProjects();
-    if (projects) {
+    const socials = await getAllSocials();
+    if (socials) {
       return Response.json({
-        projects: projects,
+        socials: socials,
         message: "success",
       });
     } else {
-      throw new Error("Failed to get projects");
+      throw new Error("Failed to get socials");
     }
   } catch (error) {
     return Response.json(

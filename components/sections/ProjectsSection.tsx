@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import { ProjectCardComponent } from "../components/ProjectCardComponent";
+import { ProjectCardComponent } from "@/components/ProjectCardComponent";
 import styles from "./ProjectsSection.module.css"; // Adjust the path as necessary
 
 type project = {

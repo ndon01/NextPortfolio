@@ -1,8 +1,11 @@
+"use client";
+
 // get if page is smaller than 768 px
 import React, { useEffect, useState } from "react";
 import styles from "./LandingSection.module.css";
-import CustomButton from "../components/CustomButton";
-import SkillsComponent from "../components/SkillsComponent";
+import CustomButton from "@/components/CustomButton";
+import SkillsComponent from "@/components/SkillsComponent";
+import { get } from "http";
 
 type SocailConnectionProps = {
   socialId: string;
@@ -16,6 +19,26 @@ type SkillProps = {
   skillName: string;
   skillDescription: string;
 };
+
+const socialImages: { [key: string]: any } = {
+  "github": "/assets/images/github-logo-svg.svg",
+  "linkedin": "/assets/images/linkedin-logo-svg.svg",
+  "twitch": "/assets/images/twitch-logo-svg.svg",
+  "x": "/assets/images/X-logo-svg.svg",
+  "youtube": "/assets/images/youtube-logo-svg.svg",
+  "huggingface": "/assets/images/hf-logo-svg.svg",
+};  
+
+function getImageForSocial(socialName: string): string {
+
+  console.log(socialName.toLowerCase());
+
+  const image = socialImages[socialName.toLowerCase()];
+  if (image) {
+    return image;
+  }
+  return "";
+}
 
 const LandingSection: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,6 +58,8 @@ const LandingSection: React.FC = () => {
     };
 
     window.addEventListener("resize", handleResize);
+
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -76,7 +101,7 @@ const LandingSection: React.FC = () => {
       <div ref={mainRef} className={`${styles.contentArea}`}
         style={{
           height: 'max-content',
-          minHeight: '80vh',
+          minHeight: '90vh',
         }}
       >
         {/* Title, Subtitle */}
@@ -89,9 +114,8 @@ const LandingSection: React.FC = () => {
               fontWeight: "normal",
             }}
           >
-            Computer Science @
-            <a className={styles.clickableButton} href="https://www.fiu.edu/">
-              {" "}
+            Computer Science @ {" "}
+            <a className={styles.clickableButton} href="https://www.fiu.edu/" style={{fontWeight: "bold"}}>
               {isMobile ? "FIU" : "Florida International University"}
             </a>
           </h2>
@@ -115,13 +139,7 @@ const LandingSection: React.FC = () => {
                   key={connection.socialId}
                   title={connection.socialName}
                   link={connection.socialLink}
-                  buttonType={
-                    connection.socialName.toLowerCase() as
-                      | "github"
-                      | "linkedin"
-                      | "x"
-                      | "youtube"
-                  }
+                  buttonIcon={getImageForSocial(connection.socialName)}
                 />
               );
             })}

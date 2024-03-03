@@ -1,7 +1,10 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 import Styles from "./TopBarComponent.module.css";
 import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 export const TopBarComponent: React.FC = () => {
   const router = useRouter();
@@ -30,15 +33,6 @@ export const TopBarComponent: React.FC = () => {
 
     // Listen for scroll
   }, []);
-
-
-  const navigateHome = () => {
-    router.push("/");
-  }
-
-  const navigateBlog = () => {
-    router.push("/blog");
-  }
 
 
   if (screenType === "Mobile") {
@@ -117,30 +111,38 @@ export const TopBarComponent: React.FC = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
+                gap: "25px",
               }}
             >
                 
-                  <div
-                    className={`${Styles.NavBarContentContainer} ${Styles.NavBarContentContainerSelected}`}
+                  <Link
+              className={`${Styles.NavBarContentContainer}`} 
+              href={"/"}          
+              onClick={() => {
+                setMobileNavMenuVisible(false);
+              }}          
                   >
                     <span
-                      className={`${Styles.NavBarContentText}`}
-                      onClick={navigateHome}
+                      className={`${pathname === '/' ? Styles.MobileNavBarContentTextSelected : Styles.MobileNavBarContentText}`}
+                      
                     >
-                      Home
+                      Portfolio
                     </span>
-                  </div>
+                  </Link>
 
-                  <div
-                    className={`${Styles.NavBarContentContainer} ${Styles.NavBarContentContainerSelected}`}
+                  <Link
+                    className={`${Styles.NavBarContentContainer}`}
+                    href={"/posts"}
+                    onClick={() => {
+                      setMobileNavMenuVisible(false);
+                    }}  
                   >
                     <span
-                      className={`${Styles.NavBarContentText}`}
-                      onClick={navigateBlog}
+                      className={`${pathname === '/posts' ? Styles.MobileNavBarContentTextSelected : Styles.MobileNavBarContentText}`}
                     >
-                      Blog
+                      Posts
                     </span>
-                  </div>
+                  </Link>
               
               
             </div>
@@ -169,16 +171,16 @@ export const TopBarComponent: React.FC = () => {
                       }}>
             {/* Left Side */}
             <div className={`${Styles.NavBarLeftContainer}`}>
-              <div className={`${Styles.NavBarContentContainer}`} onClick={navigateHome}>
+              <Link className={`${Styles.NavBarContentContainer}`} href={"/"} >
                 <span
                   className={`${Styles.NavBarContentText} ${pathname === '/' ? Styles.NavBarContentTextSelected : ''}`}
                 >
-                  Home
+                  Portfolio
                 </span>
-              </div>
-              <div className={`${Styles.NavBarContentContainer}`} onClick={navigateBlog}>
-                <span className={`${Styles.NavBarContentText} ${pathname === '/blog' ? Styles.NavBarContentTextSelected : ''}`}>Blog</span>
-              </div>
+              </Link>
+              <Link className={`${Styles.NavBarContentContainer}`} href={"/posts"}>
+                <span className={`${Styles.NavBarContentText} ${pathname === '/posts' ? Styles.NavBarContentTextSelected : ''}`}>Posts</span>
+              </Link>
             </div>
             {/* Right Side */}
             <div className={`${Styles.NavBarRightContainer}`}></div>

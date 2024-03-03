@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 import styles from "./CustomButton.module.css";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface ButtonProps {
   onClick?: () => void;
@@ -10,16 +11,18 @@ interface ButtonProps {
   children?: React.ReactNode;
   title?: string;
   link?: string;
-  buttonType?: "github" | "linkedin" | "x" | "youtube";
+  customStyle?: string
+  buttonIcon?: string | StaticImport
 }
 
 const CustomButton: React.FC<ButtonProps> = ({
-  onClick,
+ onClick,
   disabled,
   children,
   title,
-  buttonType,
   link,
+  customStyle,
+  buttonIcon,
 }) => {
   const [isMouseHovered, setMouseHovered] = React.useState(Boolean);
 
@@ -45,64 +48,15 @@ const CustomButton: React.FC<ButtonProps> = ({
     >
       {/* Replace the Image component with your customizable logo */}
 
-      {title?.toLowerCase() === "github" && (
-        <>
+      {buttonIcon && (
+        
           <Image
-            src="/assets/images/github-logo-svg.svg"
+            src={buttonIcon}
             width={25}
             height={25}
-            alt="Github"
+            alt={title || "Icon"}
             className={styles.ImagePadding}
           />
-        </>
-      )}
-
-      {title?.toLowerCase() === "linkedin" && (
-        <>
-          <Image
-            src="/assets/images/linkedin-logo-svg.svg"
-            width={25}
-            height={25}
-            alt="LinkedIn"
-            className={styles.ImagePadding}
-          />
-        </>
-      )}
-
-      {title?.toLowerCase() === "x" && (
-        <>
-          <Image
-            src="/assets/images/X-logo-svg.svg"
-            width={25}
-            height={25}
-            alt="X"
-            className={styles.ImagePadding}
-          />
-        </>
-      )}
-
-      {title?.toLowerCase() === "twitch" && (
-        <>
-          <Image
-            src="/assets/images/twitch-logo-svg.svg"
-            width={25}
-            height={25}
-            alt="X"
-            className={styles.ImagePadding}
-          />
-        </>
-      )}
-
-    {title?.toLowerCase() === "youtube" && (
-          <>
-          <Image
-            src="/assets/images/youtube-logo-svg.svg"
-            width={25}
-            height={25}
-            alt="X"
-            className={styles.ImagePadding}
-          />
-        </>
       )}
 
 

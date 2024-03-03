@@ -1,0 +1,68 @@
+.ClickableButton {
+    text-decoration: none;
+    color: rgba(81, 52, 175, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.ClickableButton:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.3s ease-in-out;
+}
+
+.LandingSection {
+
+}
+
+.PersonalDetailsContainer {
+
+}
+
+.Title {
+
+}
+
+.Subtitle {
+
+}
+
+
+
+
+
+.ProjectsSection {
+
+}
+
+
+.LoadingCover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    animation: fadeOut 2s ease;
+    pointer-events: none; /* Add this line */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

@@ -31,33 +31,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding-inline: 20px;
+    text-decoration: none;
 }
 
 .NavBarContentText {
     color: white;
     font-size: 1.2em;
-    font-weight: 400;
     text-decoration: none;
-    font-size: 20px;
-    font-family: 'Arial';
-
     transition: all 0.3s ease-in-out;
 }
-
-.NavBarContentTextSelected {
-    font-weight: bolder;
-    font-family: 'Arial';
-
-    font-size: 20px;
-}
-
 .NavBarContentText:hover {
     cursor: pointer;
-    font-weight: bolder;
+    transform: scale(1.1);
+    font-weight: bold;
     
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.NavBarContentTextSelected {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.NavBarContentTextSelected:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    font-weight: bold;
+    
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -111,6 +116,34 @@
 
 .SlideInLeft {
     animation: slideInLeft 0.1s ease-in;
+}
+
+.MobileNavBarContentText {
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.MobileNavBarContentText:hover {
+    cursor: pointer;
+    transform: scale(1.1);    
+    transition: all 0.2s ease-in-out;
+}
+
+.MobileNavBarContentTextSelected {
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.MobileNavBarContentTextSelected:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    
+    transition: all 0.2s ease-in-out;
 }
 
 @keyframes slideInLeft {

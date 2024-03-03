@@ -1,14 +1,9 @@
-"use client";
-
-import Image from "next/image";
 import styles from "./page.module.css";
-import CustomButton from "./components/CustomButton";
-import SkillsComponent from "./components/SkillsComponent";
-import { ProjectCardComponent } from "./components/ProjectCardComponent";
-import { useEffect, useState } from "react";
-import LandingSection from "./sections/LandingSection";
-import ProjectsSection from "./sections/ProjectsSection";
-import { TopBarComponent } from "./components/TopBarComponent";
+
+import LandingSection from "@/components/sections/LandingSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import { TopBarComponent } from "@/components/TopBarComponent";
+import { Metadata } from "next";
 
 type project = {
   projectId: string;
@@ -20,10 +15,23 @@ type project = {
 
 type ProjectsImplementation = project[] | null;
 
+export const metadata: Metadata = {
+  title: "Nicholas Donahue - Portfolio",
+  description: "Showcasing projects and experiences in Computer Science and Software Engineering.",
+  icons: ["/favicon.ico"],
+};
+
+
 export default function LandingPage() {
+
+
   return (
     <>
+
+      <div className={`${styles.LoadingCover} `}/>
+
       <TopBarComponent />
+
       <main
         style={{
           backgroundColor: "smokegrey",
