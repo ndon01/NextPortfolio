@@ -15,7 +15,6 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className={`${styles.LoadingCover} `}/>
 
     <div style={{
       display: "flex",

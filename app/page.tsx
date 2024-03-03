@@ -28,7 +28,6 @@ export default function LandingPage() {
   return (
     <>
 
-      <div className={`${styles.LoadingCover} `}/>
 
       <TopBarComponent />
 
