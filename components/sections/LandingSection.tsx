@@ -1,7 +1,7 @@
 "use client";
 
 // get if page is smaller than 768 px
-import React, { useEffect, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import styles from "./LandingSection.module.css";
 import CustomButton from "@/components/CustomButton";
 import SkillsComponent from "@/components/SkillsComponent";
@@ -123,8 +123,10 @@ const LandingSection: React.FC = () => {
             style={{
               fontWeight: "normal",
             }}
+
+            className={styles.pdGPA}
           >
-            GPA: <span style={{ fontWeight: "bold" }}>3.65</span>
+            GPA: <span style={{ fontWeight: "bold" }}>3.65</span> <span className={styles.gpaScale}> / 4.00</span>
           </h2>
         </div>
         {/* Links */}

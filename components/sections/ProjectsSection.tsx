@@ -30,7 +30,7 @@ export default function ProjectsSection() {
     }, []);
 
     return (
-        <div className={styles.projectsContainer}>
+        <div className={styles.projectsContainer} id="projects">
             <div className={styles.contentArea}>
                 <div className={styles.titleRow}>
                     <h1 className={styles.title}>Projects</h1>

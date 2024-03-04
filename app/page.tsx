@@ -1,9 +1,11 @@
+import { DownwardArrow } from "@/components/DownwardArrow";
 import styles from "./page.module.css";
 
 import LandingSection from "@/components/sections/LandingSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import { TopBarComponent } from "@/components/TopBarComponent";
 import { Metadata } from "next";
+import ProjectsPointer from "@/components/ProjectsPointer";
 
 type project = {
   projectId: string;
@@ -28,14 +30,16 @@ export default function LandingPage() {
   return (
     <>
 
+      {/* Top Bar */}
 
-      <TopBarComponent />
-
+      {/* Main Content */}  
       <main
         style={{
           backgroundColor: "smokegrey",
         }}
       >
+
+
         {/* Personal Area Vertical List */}
         <LandingSection />
         {/* Transition Area */}
@@ -56,7 +60,7 @@ export default function LandingPage() {
           >
             <path
               d="M0 32.7547C268.668 68.3857 425.947 69.4302 720 32.7547C1001.18 -9.79929 1158.82 -12.023 1440 32.7547V171.755H0V32.7547Z"
-              fill="#404040"
+              fill="black"
             />
           </svg>
         </div>
@@ -64,6 +68,10 @@ export default function LandingPage() {
         {/* Projects Area */}
         <ProjectsSection />
       </main>
+
+      {/* Projects Pointer */}
+      <ProjectsPointer />
+
     </>
   );
 }

@@ -140,3 +140,28 @@
         opacity: 1;
     }
 }
+
+
+.gpaScale {
+    font-size: 1.5rem;
+    font-weight: thin;
+    font-family: 'Arial';
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    top: 20px;
+    opacity: 0;
+
+    transition: all 0.5s ease;
+}
+
+
+
+.pdGPA:hover {
+    .gpaScale {
+        top: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+}

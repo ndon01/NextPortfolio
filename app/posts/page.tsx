@@ -20,7 +20,6 @@ export default function LandingPage() {
       display: "flex",
       flexDirection: "column",
         }}>
-      <TopBarComponent />
       <main
         style={{
           backgroundColor: "smokegrey",
