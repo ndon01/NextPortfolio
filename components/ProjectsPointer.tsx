@@ -27,7 +27,7 @@ export default function ProjectsPointer() {
         var element = document.getElementById("projects");
         if (element) {
             scrollTo({
-                top: element.offsetTop - 75,
+                top: element.offsetTop - 45,
                 behavior: "smooth"
             
             })
