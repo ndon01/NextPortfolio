@@ -21,7 +21,7 @@ async function getAllProjects(): Promise<ProjectsImplementation | null> {
         "x-goog-api-key": process.env.GOOGLE_API_KEY || "",
       },
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   )
